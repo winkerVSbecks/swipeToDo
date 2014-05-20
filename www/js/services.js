@@ -19,6 +19,10 @@ angular.module('starter.services', [])
         id: 2
       }];
 
+      service.add = function(list) {
+        service.lists.push(list);
+      };
+
       service.get = function(id) {
         if (!id)
           return service.lists;

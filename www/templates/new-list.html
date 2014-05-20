@@ -1,5 +1,30 @@
 <ion-view title="Add A New To Do List">
   <ion-content class="has-header">
-    <h1>add a new list</h1>
+    <div class="list">
+    	<!-- List Title -->
+		  <label class="item item-input">
+		    <span class="input-label">Title</span>
+		    <input type="text" ng-model="newList.title">
+		  </label>
+		  <!-- List items -->
+			<label class="item item-input" ng-repeat="item in newList.items">
+		    <input type="text" ng-model="item.title">
+		  </label>
+		  <!-- Add an item -->
+		  <div class="item item-input-inset">
+		    <label class="item-input-wrapper">
+		      <input type="text" ng-model="newItem.title" placeholder="add an item">
+		    </label>
+		    <button class="button button-clear button-small" ng-click="addItem()">
+		      add
+		    </button>
+		  </div>
+		  <!-- Save -->
+		  <div class="padding">
+		  	<button class="button button-block button-balanced" ng-click="save()">
+  				Save
+				</button>
+			</div>
+		</div>
   </ion-content>
 </ion-view>

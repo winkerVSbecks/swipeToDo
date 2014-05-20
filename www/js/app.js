@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'menuContent': {
         templateUrl: 'templates/new-list.html',
-        controller: 'ListCtrl'
+        controller: 'ListsCtrl'
       }
     }
   })
