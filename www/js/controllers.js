@@ -1,8 +1,7 @@
-angular.module('starter.controllers', [])
-
-.controller('AppCtrl', function($scope) {})
-
+angular.module('swipeToDo.controllers', [])
+// ----------------------------------------
 // Controller for the browse view
+// ----------------------------------------
 .controller('ListsCtrl', function($scope, listsService, $state) {
   $scope.lists = listsService.get();
   // New List
@@ -27,14 +26,38 @@ angular.module('starter.controllers', [])
     $state.go('app.lists');
   };
 })
+// ----------------------------------------
 // Controller for the list view
-.controller('ListCtrl', function($scope, $stateParams, listsService) {
+// ----------------------------------------
+.controller('ListCtrl', function($scope, $stateParams, listsService, $ionicModal) {
   $scope.list = listsService.get($stateParams.listId);
+  // Edit modal
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  // Delete an item
+  $scope.delete = function(index) {
+    $scope.list.items.splice(index, 1);
+  };
+  // Edit an item
+  $scope.edit = function(item) {
+    $scope.editItem = item;
+    $scope.modal.show();
+  };
+  // save
+  $scope.save = function() {
+    $scope.editItem = null;
+    $scope.modal.hide();
+  };
 })
+// ----------------------------------------
 // Menu Controller
+// ----------------------------------------
 .controller('MenuCtrl', function($scope, listsService) {
   $scope.lists = listsService;
-
   // Search to do lists
   $scope.search = function() {
     if ($scope.query)

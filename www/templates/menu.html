@@ -1,5 +1,6 @@
 <ion-side-menus>
-
+  
+  <!-- The main content container -->
   <ion-pane ion-side-menu-content>
     <!-- Navigation Bar -->
     <ion-nav-bar class="bar-balanced nav-title-slide-ios7">
@@ -14,9 +15,7 @@
 
   <!-- Side Menu -->
   <ion-side-menu side="left" ng-controller="MenuCtrl">
-<!--     <header class="bar bar-header bar-stable">
-      <h1 class="title">Left</h1>
-    </header> -->
+    <!-- The Header -->
     <div class="bar bar-header item-input-inset">
       <!-- search box -->
       <label class="item-input-wrapper">
@@ -27,6 +26,7 @@
         Cancel
       </button>
     </div>
+    <!-- The Content -->
     <ion-content class="has-header">
       <!-- search results -->
       <ion-list ng-show="results.length > 0">
@@ -36,19 +36,23 @@
       </ion-list>
       <!-- navigation -->
       <ion-list  ng-hide="results.length > 0">
+        <!-- List of Lists -->
         <ion-item class="item-icon-left" nav-clear menu-close href="#/app/lists">
           <i class="icon ion-ios7-albums"></i>
           Browse
         </ion-item>
+        <!-- Create a new list -->
         <ion-item class="item-icon-left" nav-clear menu-close href="#/app/lists/new">
           <i class="icon ion-ios7-plus"></i>
           Add A List
         </ion-item>
+        <!-- Settings page -->
         <ion-item class="item-icon-left" nav-clear menu-close href="#/app/settings">
           <i class="icon ion-ios7-gear"></i>
           Settings
         </ion-item>
       </ion-list>
+
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

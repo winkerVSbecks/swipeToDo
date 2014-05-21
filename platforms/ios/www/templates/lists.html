@@ -1,12 +1,9 @@
 <ion-view title="To Do Lists">
   <ion-content class="has-header">
-
-  	<!-- simple ion-list directive -->
     <ion-list>
       <ion-item ng-repeat="list in lists" href="#/app/lists/{{list.id}}">
         {{list.title}}
       </ion-item>
     </ion-list>
-  
   </ion-content>
 </ion-view>

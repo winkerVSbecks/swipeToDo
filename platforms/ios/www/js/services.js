@@ -1,4 +1,4 @@
-angular.module('swipeToDo.services', [])
+angular.module('starter.services', [])
   .factory('listsService', [
 
     function() {
@@ -51,11 +51,19 @@ angular.module('swipeToDo.services', [])
   ]);
 
 
-// ----------------------------------------
-// Mock Data
-// ----------------------------------------
 // Things to do
 var toDos = [{
+  title: 'boom box',
+  done: false,
+  id: 0
+}, {
+  title: 'boom box',
+  done: false,
+  id: 1
+}];
+
+// Reminder
+var reminders = [{
   title: 'Build a real backend',
   done: false,
   id: 0
@@ -71,33 +79,6 @@ var toDos = [{
   title: 'Add more animations',
   done: false,
   id: 3
-}, {
-  title: 'Actually implement edit item',
-  done: false,
-  id: 4
-}, {
-  title: 'Add a back button',
-  done: false,
-  id: 5
-}];
-
-// Reminder
-var reminders = [{
-  title: 'Take out trash',
-  done: false,
-  id: 0
-}, {
-  title: 'Pick up dry-cleaning',
-  done: false,
-  id: 1
-}, {
-  title: 'Pay bills',
-  done: false,
-  id: 2
-}, {
-  title: 'Lunch with someone',
-  done: false,
-  id: 2
 }];
 
 

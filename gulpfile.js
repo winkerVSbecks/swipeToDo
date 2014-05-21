@@ -13,13 +13,12 @@ var paths = {
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
+    .pipe(sass({
+      errLogToConsole: true
     }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(minifyCss())
+    .pipe(gulp.dest('./www/css'))
+    .pipe(connect.reload())
     .on('end', done);
 });
 
