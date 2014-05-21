@@ -1,5 +1,4 @@
 // Ionic SwipeToDo App
-
 angular.module('swipeToDo', [
   'ionic',
   'swipeToDo.controllers',
@@ -14,6 +13,7 @@ angular.module('swipeToDo', [
       }
       if (window.StatusBar) {
         // org.apache.cordova.statusbar required
+        // Can change colour of the status bar
         StatusBar.styleDefault();
       }
     });

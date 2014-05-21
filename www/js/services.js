@@ -1,3 +1,6 @@
+// ----------------------------------------
+// The List Service
+// ----------------------------------------
 angular.module('swipeToDo.services', [])
   .factory('listsService', [
 
