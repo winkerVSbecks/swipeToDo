@@ -47,6 +47,10 @@ angular.module('swipeToDo.controllers', [])
     $scope.editItem = item;
     $scope.modal.show();
   };
+  // Done
+  $scope.done = function(item) {
+    item.done = true;
+  };
   // save
   $scope.save = function() {
     $scope.editItem = null;

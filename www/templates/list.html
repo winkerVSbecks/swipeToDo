@@ -4,12 +4,18 @@
   	<!-- List of items -->
     <ion-list>
     	<!-- each item -->
-      <ion-item ng-repeat="item in list.items">
+      <ion-item 
+        ng-repeat="item in list.items"
+        ng-class="{ done : item.done }">
         {{item.title}}
         <!-- Edit Button -->
 		    <ion-option-button 
 		    	class="button-info"
 					ng-click="edit(item)">Edit</ion-option-button>
+        <!-- Edit Button -->
+        <ion-option-button 
+          class="button-balanced"
+          ng-click="done(item)">Done</ion-option-button>
 				<!-- Delete Button -->
 			  <ion-option-button 
 			  	class="button-assertive"
